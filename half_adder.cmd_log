@@ -1,0 +1,16 @@
+xst -intstyle ise -ifn "F:/Xilinx/14.7/ISE_DS/half_adder/half_adder.xst" -ofn "F:/Xilinx/14.7/ISE_DS/half_adder/half_adder.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-tqg144-2 half_adder.ngc half_adder.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o half_adder_map.ncd half_adder.ngd half_adder.pcf 
+par -w -intstyle ise -ol high -mt off half_adder_map.ncd half_adder.ncd half_adder.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml half_adder.twx half_adder.ncd -o half_adder.twr half_adder.pcf 
+bitgen -intstyle ise -f half_adder.ut half_adder.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc half_adder.ucf -p xc6slx9-tqg144-2 half_adder.ngc half_adder.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o half_adder_map.ncd half_adder.ngd half_adder.pcf 
+par -w -intstyle ise -ol high -mt off half_adder_map.ncd half_adder.ncd half_adder.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml half_adder.twx half_adder.ncd -o half_adder.twr half_adder.pcf -ucf half_adder.ucf 
+bitgen -intstyle ise -f half_adder.ut half_adder.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc half_adder.ucf -p xc6slx9-tqg144-2 half_adder.ngc half_adder.ngd  
+map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o half_adder_map.ncd half_adder.ngd half_adder.pcf 
+par -w -intstyle ise -ol high -mt off half_adder_map.ncd half_adder.ncd half_adder.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml half_adder.twx half_adder.ncd -o half_adder.twr half_adder.pcf -ucf half_adder.ucf 
+bitgen -intstyle ise -f half_adder.ut half_adder.ncd 
